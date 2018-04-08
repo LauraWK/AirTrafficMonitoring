@@ -34,7 +34,7 @@ namespace AirTrafficMonitoring
             foreach (var item in myList)
             {
                 var result = TF.Create(item);
-                Console.WriteLine("Tag: " + result.Tag + "XCoordinate: " + result.XCoordinate + "YCoordinate: " + result.YCoordinate + "Altitude: " + result.Altitude + "Timestamp: " + result.Timestamp);
+                Console.WriteLine("Tag: " + result.Tag + " XCoordinate: " + result.XCoordinate + " YCoordinate: " + result.YCoordinate + " Altitude: " + result.Altitude + " Timestamp: " + result.Timestamp);
                 
             }
             
