@@ -13,16 +13,19 @@ namespace AirTrafficMonitoring
         {
             var separatedValues = type.Split(';');
 
+            var date = separatedValues[4];
+
             var contverter = new Track()
             {
                 Tag = separatedValues[0],
                 XCoordinate = Convert.ToInt32(separatedValues[1]),
                 YCoordinate = Convert.ToInt32(separatedValues[2]),
                 Altitude = Convert.ToInt32(separatedValues[3]),
-                Timestamp = DateTime.ParseExact("yyyymmddhhmmssfff", "yyyy - mm - dd hh: mm:ss,fff",
-                    System.Globalization.CultureInfo.InvariantCulture),
+                Timestamp = DateTime.ParseExact(separatedValues[4], "yyyyMMddHHmmssfff",
+                    System.Globalization.CultureInfo.InvariantCulture)
             };
             return contverter;
+
         }
     }
 }

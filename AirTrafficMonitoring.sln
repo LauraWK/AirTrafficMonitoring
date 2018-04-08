@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirTrafficMonitoring", "AirTrafficMonitoring\AirTrafficMonitoring.csproj", "{A3975AB0-D13B-4D12-82B0-E6311960EDBE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unit.Test.ATM", "Unit.Test.ATM\Unit.Test.ATM.csproj", "{D95BB14A-03C1-4821-9C16-23D6976F6B01}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A3975AB0-D13B-4D12-82B0-E6311960EDBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3975AB0-D13B-4D12-82B0-E6311960EDBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3975AB0-D13B-4D12-82B0-E6311960EDBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D95BB14A-03C1-4821-9C16-23D6976F6B01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D95BB14A-03C1-4821-9C16-23D6976F6B01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D95BB14A-03C1-4821-9C16-23D6976F6B01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D95BB14A-03C1-4821-9C16-23D6976F6B01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
