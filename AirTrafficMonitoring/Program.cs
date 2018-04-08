@@ -24,15 +24,18 @@ namespace AirTrafficMonitoring
         {
             var TF = new TrackFactory();
             var myList = e.TransponderData;
+
             
-            for (int i = 0; i < myList.Count; i++)
-            {
-                Console.WriteLine(myList[i]);
-            }
+            //for (int i = 0; i < myList.Count; i++)
+            //{
+            //    Console.WriteLine(myList[i]);
+            //}
 
             foreach (var item in myList)
             {
-                TF.Create(item);
+                var result = TF.Create(item);
+                Console.WriteLine("Tag: " + result.Tag + "XCoordinate: " + result.XCoordinate + "YCoordinate: " + result.YCoordinate + "Altitude: " + result.Altitude + "Timestamp: " + result.Timestamp);
+                
             }
             
         }
