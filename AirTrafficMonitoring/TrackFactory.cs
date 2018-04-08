@@ -13,8 +13,6 @@ namespace AirTrafficMonitoring
         {
             var separatedValues = type.Split(';');
 
-            var date = separatedValues[4];
-
             var contverter = new Track()
             {
                 Tag = separatedValues[0],
