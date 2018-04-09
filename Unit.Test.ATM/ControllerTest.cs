@@ -2,6 +2,8 @@
 using NSubstitute;
 using NUnit.Framework;
 using NUnit.Framework.Internal;
+using System;
+using System.Collections.Generic;
 using TransponderReceiver;
 
 namespace Unit.Test.ATM
@@ -11,12 +13,14 @@ namespace Unit.Test.ATM
     {
         private ITransponderReceiver receiver;
         private ControllerReceivedData uut;
+        private TrackFactory fakeFactory;
       
 
         [SetUp]
         public void Setup()
         {
-            receiver = Substitute.For<ITransponderReceiver>();        
+            receiver = Substitute.For<ITransponderReceiver>();
+            fakeFactory = Substitute.For<TrackFactory>();
             uut = new ControllerReceivedData(receiver);
         }
 
@@ -28,13 +32,11 @@ namespace Unit.Test.ATM
         }
 
         [Test]
-        public void DataReady_CreateTrackIsCalled_PrintToConsole()
+        public void DataReady_IsCalled()
         {
             var listofdata = new List<string>() { "ATR423;39045;12932;14000;20180412123244765" };
-            uut.DataReady(this, RawTransponderDataEventArgs(listofdata));
-            Assert.AreEqual("Tag: ATR423 XCoordinate: 39045 YCoordinate: 12932 Altitude: 14000 Timestamp: 12-04-2018 12:32:44", Console.Out);
-
-
+            uut.DataReady(this, new RawTransponderDataEventArgs(listofdata));
+            fakeFactory.Received().Create("ATR423;39045;12932;14000;20180412123244765");
         }
 
 

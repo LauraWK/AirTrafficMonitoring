@@ -41,7 +41,7 @@ namespace Unit.Test.ATM
         public void Tag_Is_Converted_Correctly(string transponderData, string wantedTag)
         {
             var result = uut.Create(transponderData);
-
+            
             Assert.That(result.Tag, Is.EqualTo(wantedTag));
         }
 
