@@ -2,6 +2,7 @@
 using NSubstitute;
 using NUnit.Framework;
 using NUnit.Framework.Internal;
+using System.Collections.Generic;
 using TransponderReceiver;
 
 namespace Unit.Test.ATM
@@ -28,10 +29,10 @@ namespace Unit.Test.ATM
         }
 
         [Test]
-        public void DataReady_CreateTrackIsCalled_PrintToConsole()
+        public void DataReady_IsCalled()
         {
             var listofdata = new List<string>() { "ATR423;39045;12932;14000;20180412123244765" };
-            uut.DataReady(this, RawTransponderDataEventArgs(listofdata));
+            uut.DataReady(this, new RawTransponderDataEventArgs(listofdata));
             Assert.AreEqual("Tag: ATR423 XCoordinate: 39045 YCoordinate: 12932 Altitude: 14000 Timestamp: 12-04-2018 12:32:44", Console.Out);
 
 
