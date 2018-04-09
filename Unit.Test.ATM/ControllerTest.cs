@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AirTrafficMonitoring;
+﻿using AirTrafficMonitoring;
 using NSubstitute;
 using NUnit.Framework;
 using NUnit.Framework.Internal;
@@ -12,7 +7,7 @@ using TransponderReceiver;
 namespace Unit.Test.ATM
 {
     [TestFixture]
-    class RecieverTest
+    public class ControllerTest
     {
         private ITransponderReceiver receiver;
         private ITrack track;
@@ -26,7 +21,6 @@ namespace Unit.Test.ATM
             
         }
 
-        [Test]
-        public 
+        
     }
 }
