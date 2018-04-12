@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Controller\ControllerReceivedData.cs" />
     <Compile Include="Domain\Airspace.cs" />
+    <Compile Include="Domain\Velocity.cs" />
     <Compile Include="Interfaces\ITrack.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

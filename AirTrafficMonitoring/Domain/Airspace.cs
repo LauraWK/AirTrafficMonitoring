@@ -17,8 +17,8 @@ namespace AirTrafficMonitoring.Domain
 
         public void DefineAirspace(string track)
         {
-            if (_track.XCoordinate >= 10 || _track.XCoordinate <= 90 && _track.YCoordinate >= 10 ||
-                _track.YCoordinate >= 90)
+            if (_track.XCoordinate >= 10000 || _track.XCoordinate <= 90000 && _track.YCoordinate >= 10000 ||
+                _track.YCoordinate >= 90000)
             {
                 if (_track.Altitude >= 500 && _track.Altitude <= 20000)
                 {
