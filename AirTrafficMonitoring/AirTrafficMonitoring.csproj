@@ -61,12 +61,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ControllerReceivedData.cs" />
-    <Compile Include="ITrack.cs" />
+    <Compile Include="Controller\ControllerReceivedData.cs" />
+    <Compile Include="Domain\Airspace.cs" />
+    <Compile Include="Interfaces\ITrack.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Track.cs" />
-    <Compile Include="TrackFactory.cs" />
+    <Compile Include="Domain\Track.cs" />
+    <Compile Include="Boundary\TrackFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

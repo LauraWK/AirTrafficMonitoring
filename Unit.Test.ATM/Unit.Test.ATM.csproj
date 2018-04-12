@@ -59,8 +59,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ControllerTest.cs" />
-    <Compile Include="TrackFactoryTest.cs" />
+    <Compile Include="Tests\ControllerTest.cs" />
+    <Compile Include="Tests\TrackFactoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
