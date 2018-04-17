@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AirTrafficMonitoring.Domain;
 using TransponderReceiver;
 
 namespace AirTrafficMonitoring
@@ -26,13 +27,19 @@ namespace AirTrafficMonitoring
         public void DataReady(object sender, RawTransponderDataEventArgs e)
         {
             var TF = new TrackFactory();
+            var velocity = new Velocity();
+
             var myList = e.TransponderData;
 
             foreach (var item in myList)
             {
-                var result = TF.Create(item);
-              
+                var track1 = TF.Create(item);
+                
+            }
 
+            foreach (var item in myList)
+            {
+                velocity.DetermineVelocity()
             }
         }
     }

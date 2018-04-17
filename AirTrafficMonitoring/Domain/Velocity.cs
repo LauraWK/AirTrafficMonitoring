@@ -8,10 +8,9 @@ namespace AirTrafficMonitoring.Domain
 {
     public class Velocity
     {
-        private Track track1;
-        private Track track2;
+        
 
-        public double DetermineVelocity()
+        public double DetermineVelocity(Track track1, Track track2)
         {
             var timediff = track2.Timestamp.Subtract(track1.Timestamp);
             var distance = Math.Sqrt(Math.Pow((track1.YCoordinate - track1.XCoordinate),2) +
