@@ -66,6 +66,7 @@
     <Compile Include="Domain\CompassCourse.cs" />
     <Compile Include="Controller\ControllerReceivedData.cs" />
     <Compile Include="Domain\Airspace.cs" />
+    <Compile Include="Domain\Display.cs" />
     <Compile Include="Domain\Velocity.cs" />
     <Compile Include="Interfaces\ITrack.cs" />
     <Compile Include="Program.cs" />
