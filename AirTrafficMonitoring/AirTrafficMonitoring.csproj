@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\ControllerList.cs" />
     <Compile Include="Controller\ControllerTrack.cs" />
     <Compile Include="Domain\CompassCourse.cs" />
     <Compile Include="Controller\ControllerReceivedData.cs" />
