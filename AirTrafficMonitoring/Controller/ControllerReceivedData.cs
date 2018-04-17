@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AirTrafficMonitoring.Controller;
 using AirTrafficMonitoring.Domain;
 using TransponderReceiver;
 
@@ -12,9 +13,12 @@ namespace AirTrafficMonitoring
     {
 
         private ITransponderReceiver _reciever;
-        public ControllerReceivedData(ITransponderReceiver reciever)
+        private ControllerList _controllerList;
+        public ControllerReceivedData(ITransponderReceiver reciever, ControllerList controllerList)
         {
             _reciever = reciever;
+            _controllerList = controllerList;
+
         }
 
         public void StartReceiving()
@@ -34,7 +38,7 @@ namespace AirTrafficMonitoring
             foreach (var item in myList)
             {
                 var track = TF.Create(item);
-          
+                _controllerList.AddToList(track);
             }
 
            
