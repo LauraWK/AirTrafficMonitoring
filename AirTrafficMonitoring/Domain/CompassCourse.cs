@@ -8,41 +8,15 @@ namespace AirTrafficMonitoring
 {
     public class CompassCourse
     {
-        public int North { get; set; }
-        public int East { get; set; }
-        public int South { get; set; }
-        public int West { get; set; }
-        public int NorthEast { get; set; }
-        public int SouthEast { get; set; }
-        public int SouthWest { get; set; }
-        public int NorthWest { get; set; }
-
-        public int Undefined { get; set; }
-
-        public void CompassCourse1()
+        public double Direction(ITrack track)
         {
-            North = 0;
-            East = 2;
-            South = 4;
-            West = 6;
-            NorthEast = 1;
-            SouthEast = 3;
-            SouthWest = 5;
-            NorthWest = 7;
-            Undefined = -1;
+            //ved nord lig 0 er længden til kanten lig 90.000 - det ses som en vektor (0,90000) som vi beregner vinkel med
+            double angleInRadians = Math.Atan2(track.YCoordinate, track.XCoordinate) - Math.Atan2(90000, 0);
+
+            double angleInDegrees = angleInRadians / (180 / Math.PI);
+
+            return angleInDegrees;
+
         }
-
-        public int Direction(ITrack track1,ITrack track2)
-        {
-            double angle = Math.Atan2(track2.YCoordinate - track1.YCoordinate, track2.XCoordinate - track1.XCoordinate);
-            angle += Math.PI;
-            angle /= Math.PI / 4;
-            int halfQuarter = Convert.ToInt32(angle);
-            halfQuarter %= 8;
-
-            return halfQuarter;
-        }
-
-
     }
 }
