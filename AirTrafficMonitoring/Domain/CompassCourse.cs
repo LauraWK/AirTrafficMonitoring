@@ -9,5 +9,6 @@ namespace AirTrafficMonitoring
     public class CompassCourse
     {
 
+
     }
 }
