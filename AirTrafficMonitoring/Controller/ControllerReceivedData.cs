@@ -27,20 +27,21 @@ namespace AirTrafficMonitoring
         public void DataReady(object sender, RawTransponderDataEventArgs e)
         {
             var TF = new TrackFactory();
-            var velocity = new Velocity();
+         //   var velocityobject = new Velocity();
+          //  var velocitylist = new List<ITrack>();
 
             var myList = e.TransponderData;
 
             foreach (var item in myList)
             {
-                var track1 = TF.Create(item);
-                
+                var track = TF.Create(item);
+          //      velocitylist.Add(track);
+             
+          //      var airspace = new Airspace(track);
             }
 
-            foreach (var item in myList)
-            {
-                velocity.DetermineVelocity()
-            }
+           // var velocity = velocityobject.DetermineVelocity(velocitylist[1], velocitylist[0]);
+            
         }
     }
 }

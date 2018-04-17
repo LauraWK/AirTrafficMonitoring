@@ -10,7 +10,7 @@ namespace AirTrafficMonitoring.Domain
     {
         
 
-        public double DetermineVelocity(Track track1, Track track2)
+        public double DetermineVelocity(ITrack track1, ITrack track2)
         {
             var timediff = track2.Timestamp.Subtract(track1.Timestamp);
             var distance = Math.Sqrt(Math.Pow((track1.YCoordinate - track1.XCoordinate),2) +
