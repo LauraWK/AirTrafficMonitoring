@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AirTrafficMonitoring.Boundary;
+using AirTrafficMonitoring.Interfaces;
 
 namespace AirTrafficMonitoring.Domain
 {
-    public class Display : SubjectMonitoredPlanes
+    public class Display : IDisplay
     {
         public void ShowTrack(ITrack _track)
         {

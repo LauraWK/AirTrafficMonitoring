@@ -13,5 +13,7 @@ namespace AirTrafficMonitoring
         int YCoordinate { get; set; }
         int Altitude { get; set; }
         DateTime Timestamp { get; set; }
+        double Velocity { get; set; }
+        double CompassCourse { get; set; }
     }
 }

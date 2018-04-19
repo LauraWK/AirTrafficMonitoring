@@ -11,11 +11,13 @@ namespace AirTrafficMonitoring.Controller
     {
         private List<ITrack> TrackList;
         private Airspace airspace;
+        private TrakcsInAirspace tracksInAirspace;
 
         public ControllerList()
         {
             TrackList = new List<ITrack>();
             airspace = new Airspace();
+            tracksInAirspace = new TrakcsInAirspace();
         }
 
         public void AddToList(ITrack track)
@@ -23,10 +25,8 @@ namespace AirTrafficMonitoring.Controller
             if (airspace.DefineAirspace(track))
             {
                 TrackList.Add(track);
+                tracksInAirspace.MatchTracks(TrackList);
             }
-            
         }
-
-
     }
 }

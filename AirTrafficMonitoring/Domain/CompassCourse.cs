@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AirTrafficMonitoring.Interfaces;
 
 namespace AirTrafficMonitoring
 {
-    public class CompassCourse
+    public class CompassCourse : ICompassCourse
     {
         public double Direction(ITrack track)
         {
