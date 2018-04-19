@@ -61,6 +61,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Boundary\MonitoredPlanes.cs" />
+    <Compile Include="Boundary\SeperationEvent.cs" />
+    <Compile Include="Boundary\SubjectMonitoredPlanes.cs" />
+    <Compile Include="Boundary\XMLSeperationEvent.cs" />
     <Compile Include="Controller\ControllerList.cs" />
     <Compile Include="Controller\ControllerTrack.cs" />
     <Compile Include="Controller\TrakcsInAirspace.cs" />
@@ -69,6 +73,7 @@
     <Compile Include="Domain\Airspace.cs" />
     <Compile Include="Domain\Display.cs" />
     <Compile Include="Domain\Velocity.cs" />
+    <Compile Include="Interfaces\IMonitoredPlanes.cs" />
     <Compile Include="Interfaces\ITrack.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
