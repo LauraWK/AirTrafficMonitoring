@@ -30,8 +30,8 @@ namespace AirTrafficMonitoring.Controller
                 {
                     if (n.Tag == old.Tag)
                     {
-                        _velocity.DetermineVelocity(n, old);
-                        _compassCourse.Direction(n);
+                       n.Velocity = _velocity.DetermineVelocity(n, old);
+                       n.CompassCourse = _compassCourse.Direction(n);
                     }
                 }
             }
