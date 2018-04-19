@@ -13,13 +13,16 @@ namespace AirTrafficMonitoring
         public int YCoordinate { get; set; }
         public int Altitude { get; set; }
         public DateTime Timestamp { get; set; }
+        public double velocity { get; set; }
+        public double compassCourse { get; set; }
 
         public Track()
         {
             XCoordinate = 0;
             YCoordinate = 0;
             Altitude = 0;
-            //Velocity = 0;
+            velocity = 0;
+            compassCourse = 0;
 
 
         }

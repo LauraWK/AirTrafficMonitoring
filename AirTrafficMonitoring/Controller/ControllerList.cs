@@ -24,9 +24,6 @@ namespace AirTrafficMonitoring.Controller
             {
                 TrackList.Add(track);
             }
-            
         }
-
-
     }
 }
