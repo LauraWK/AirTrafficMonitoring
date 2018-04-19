@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,11 +22,11 @@ namespace AirTrafficMonitoring.Boundary
             observerList.Remove(observer);
         }
 
-        public void Notify(string alarm)
+        public void Notify(ITrack track1, ITrack track2)
         {
             foreach (var observer in observerList)
             {
-                observer.Update(alarm);
+                observer.Update(track1, track2);
             }
         }
     }
