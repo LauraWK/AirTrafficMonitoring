@@ -11,11 +11,9 @@ namespace AirTrafficMonitoring.Boundary
     public class MonitoredPlanes : IMonitoredPlanes
     {
 
-        public MonitoredPlanes(Display display, SeperationEvent seperation)
+        public MonitoredPlanes(SeperationEvent seperation)
         {
-            display.Attach(this);
             seperation.Attach(this);
-
         }
 
         public void Update(string alarm)
