@@ -19,7 +19,7 @@ namespace AirTrafficMonitoring.Domain
                 if (track.Altitude >= 500 && track.Altitude <= 20000)
                 {
                    _display.ShowTrack(track);
-                    //Overvej at lave en display-klasse
+                    
                     return true;
                 }
                 return false;
