@@ -13,10 +13,11 @@ namespace AirTrafficMonitoring.Domain
 
         public double DetermineVelocity(ITrack track1, ITrack track2)
         {
-            var timediff = track2.Timestamp.Subtract(track1.Timestamp);
+            TimeSpan timediff = track2.Timestamp.Subtract(track1.Timestamp);
+            double secdiff = timediff.TotalSeconds;
             var distance = Math.Sqrt(Math.Pow((track1.YCoordinate - track1.XCoordinate),2) +
                                      Math.Pow((track2.YCoordinate - track2.XCoordinate),2));
-            var velocity = distance / Math.Abs(Convert.ToDouble(timediff));
+            var velocity = distance / Math.Abs(Convert.ToDouble(secdiff));
 
             return velocity;
 

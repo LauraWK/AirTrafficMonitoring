@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AirTrafficMonitoring.Controller;
 using TransponderReceiver;
 
 
@@ -12,8 +13,8 @@ namespace AirTrafficMonitoring
     {
         static void Main(string[] args)
         {
-                    
-            var controller = new ControllerReceivedData(TransponderReceiverFactory.CreateTransponderDataReceiver());
+                    ControllerList controllerlist = new ControllerList();
+            var controller = new ControllerReceivedData(TransponderReceiverFactory.CreateTransponderDataReceiver(), controllerlist);
                     
             controller.StartReceiving();
            
