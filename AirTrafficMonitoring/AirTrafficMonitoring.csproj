@@ -61,10 +61,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Boundary\LogFile.cs" />
     <Compile Include="Boundary\MonitoredPlanes.cs" />
     <Compile Include="Boundary\SeperationEvent.cs" />
     <Compile Include="Boundary\SubjectMonitoredPlanes.cs" />
-    <Compile Include="Boundary\XMLSeperationEvent.cs" />
     <Compile Include="Controller\ControllerList.cs" />
     <Compile Include="Controller\ControllerTrack.cs" />
     <Compile Include="Domain\CompassCourse.cs" />
