@@ -26,8 +26,6 @@ namespace Unit.Test.ATM.Tests
             uut = new Velocity();
         }
 
-        [TestCase()]
-
 
     }
 }
