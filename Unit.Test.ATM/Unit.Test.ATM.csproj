@@ -62,11 +62,13 @@
     <Compile Include="Tests\AirspaceTest.cs" />
     <Compile Include="SeperationEventTest.cs" />
     <Compile Include="Tests\CompassCourseTest.cs" />
+    <Compile Include="Tests\ReceivedDataController.cs" />
     <Compile Include="Tests\ControllerTest.cs" />
     <Compile Include="Tests\MonitoredPlanesTest.cs" />
     <Compile Include="Tests\SeperationEventsTest.cs" />
     <Compile Include="Tests\TrackFactoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\TracksInAirspaceController.cs" />
     <Compile Include="Tests\VelocityTest.cs" />
   </ItemGroup>
   <ItemGroup>
