@@ -35,6 +35,7 @@ namespace AirTrafficMonitoring.Controller
                     {
                         track.Velocity = _velocity.DetermineVelocity(track, t);
                         track.CompassCourse = _compassCourse.Direction(track);
+                        CurrentTracks.Remove(t);
                     }
                 }
             CurrentTracks.Add(track);
