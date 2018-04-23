@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SortingPlanesControllerTest.cs" />
     <Compile Include="Tests\AirspaceTest.cs" />
     <Compile Include="SeperationEventTest.cs" />
     <Compile Include="Tests\CompassCourseTest.cs" />

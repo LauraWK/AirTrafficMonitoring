@@ -28,9 +28,9 @@ namespace AirTrafficMonitoring
                 angleInDegrees = angleInRadians * (180 / Math.PI);
 
                 angleInDegrees = 90 - angleInDegrees;
-                if (angleInDegrees < 0) angleInDegrees += 360;
+                if (angleInDegrees < 0) angleInDegrees += 360; 
             }
-
+             
             return angleInDegrees;
         }
     }
