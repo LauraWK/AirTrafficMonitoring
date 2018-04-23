@@ -65,6 +65,7 @@
     <Compile Include="Tests\ReceivedDataController.cs" />
     <Compile Include="Tests\ControllerTest.cs" />
     <Compile Include="Tests\MonitoredPlanesTest.cs" />
+    <Compile Include="Tests\ReceivedDataControllerTest.cs" />
     <Compile Include="Tests\SeperationEventsTest.cs" />
     <Compile Include="Tests\TrackFactoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
