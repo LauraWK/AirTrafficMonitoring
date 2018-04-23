@@ -12,14 +12,28 @@ namespace AirTrafficMonitoring.Boundary
     public class MonitoredPlanes : SubjectMonitoredPlanes
     {
         
-        public void HandleSeperationEvents(ITrack track1, ITrack track2)
+        public void HandleSeperationEvents(List<ITrack> trackList) 
         {
-            if (Math.Abs(track1.XCoordinate-track2.XCoordinate) < 300 && Math.Abs(track1.YCoordinate-track2.YCoordinate) < 300
-                && Math.Abs(track1.Altitude - track2.Altitude) < 5000)
+            for (int i = 0; i < trackList.Count; i++)
             {
-                
-                Notify(track1, track2);
+                for (int j = i+1; j < trackList.Count; j++)
+                {
+                    if (trackList.Count >= 2 && trackList[i].Tag != trackList[j].Tag )
+                    {
+                        double xCoordinate1 = trackList[i].XCoordinate;
+                        double xCoordinate2 = trackList[j].XCoordinate;
+                        double yCoordinate1 = trackList[i].YCoordinate;
+                        double yCoordinate2 = trackList[j].YCoordinate;
+
+                        if (Math.Abs(xCoordinate1 - xCoordinate2) < 300 && Math.Abs(yCoordinate2 - yCoordinate1) < 300
+                            && Math.Abs(trackList[i].Altitude - trackList[j].Altitude) < 5000)
+                        {
+                            Notify(trackList[i],trackList[j]);
+                        }
+                    }
+                }
             }
+
         }
     }
 }
