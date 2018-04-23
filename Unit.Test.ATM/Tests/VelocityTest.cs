@@ -26,7 +26,10 @@ namespace Unit.Test.ATM.Tests
             uut = new Velocity();
         }
 
-        [TestCase(100, 100, 10, 14.142)]
+        [TestCase(100, 100, 10, 14.142135623730951)]
+        [TestCase(500,500,20, 35.355339059327378)]
+        [TestCase(-150,-150, 2, 106.06601717798213)]
+    
 
         public void DetermineVelocityIsCorrect(int X, int Y, int Time, double Result)
         {
