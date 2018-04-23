@@ -12,9 +12,30 @@ namespace AirTrafficMonitoring
         public double Direction(ITrack track)
         {
             //ved nord lig 0 er længden til kanten lig 90.000 - det ses som en vektor (0,90000) som vi beregner vinkel med
-            double angleInRadians = Math.Atan2(track.YCoordinate - 0, track.XCoordinate - 90000);
+
+            double diffXCoordinate = track.XCoordinate - 90000;
+                
+            double diffYCoordinate = track.YCoordinate- 0;
+
+            double angleInRadians = Math.Atan(diffYCoordinate/diffXCoordinate);
 
             double angleInDegrees = Math.Abs(angleInRadians / (180 / Math.PI));
+
+            if (diffXCoordinate < 0 || diffYCoordinate < 0)
+            {
+                angleInDegrees += 180;
+            }
+
+            if (diffXCoordinate > 0 && diffYCoordinate < 0)
+            {
+                angleInDegrees -= 180;
+            }
+
+            if (angleInDegrees < 0)
+            {
+                angleInDegrees += 360;
+            }
+                
 
             return angleInDegrees;
 
