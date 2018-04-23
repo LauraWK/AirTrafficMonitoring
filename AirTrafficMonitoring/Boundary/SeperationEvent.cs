@@ -11,7 +11,7 @@ namespace AirTrafficMonitoring.Boundary
     public class SeperationEvent : IMonitoredPlanes
     {
         private MonitoredPlanes _monitor;
-        private LogFile _logFile;
+        private ILogFile _logFile;
         private TextWriter writer;
         private IDisplay _display;
         

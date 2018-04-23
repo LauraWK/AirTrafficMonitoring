@@ -4,10 +4,11 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AirTrafficMonitoring.Interfaces;
 
 namespace AirTrafficMonitoring.Boundary
 {
-   public class LogFile
+   public class LogFile : ILogFile
    {
      
        public void LogToFile(TextWriter w, ITrack track1, ITrack track2)

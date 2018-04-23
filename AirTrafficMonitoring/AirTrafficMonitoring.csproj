@@ -74,6 +74,7 @@
     <Compile Include="Domain\Velocity.cs" />
     <Compile Include="Interfaces\IAirspace.cs" />
     <Compile Include="Interfaces\IDisplay.cs" />
+    <Compile Include="Interfaces\ILogFile.cs" />
     <Compile Include="Interfaces\IMonitoredPlanes.cs" />
     <Compile Include="Interfaces\ICompassCourse.cs" />
     <Compile Include="Interfaces\ITrack.cs" />
