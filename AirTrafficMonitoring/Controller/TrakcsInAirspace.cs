@@ -16,6 +16,7 @@ namespace AirTrafficMonitoring.Controller
         private CompassCourse _compassCourse;
         private IDisplay display;
         private MonitoredPlanes monitoredPlanes;
+        private List<ITrack> tracksToRemove;
 
 
         public TrakcsInAirspace()
@@ -25,6 +26,7 @@ namespace AirTrafficMonitoring.Controller
             _compassCourse = new CompassCourse();
             display = new Display();
             monitoredPlanes = new MonitoredPlanes();
+            tracksToRemove = new List<ITrack>();
         }
 
         public void MatchTracks(ITrack track)
@@ -35,11 +37,18 @@ namespace AirTrafficMonitoring.Controller
                     {
                         track.Velocity = _velocity.DetermineVelocity(track, t);
                         track.CompassCourse = _compassCourse.Direction(track);
-                        CurrentTracks.Remove(t);
+                        tracksToRemove.Add(t);
                     }
                 }
             CurrentTracks.Add(track);
             display.ShowTrack(track);
+            foreach (var R in tracksToRemove)
+            {
+                if (CurrentTracks.Contains(R))
+                    CurrentTracks.Remove(R);
+            }
+            tracksToRemove.Clear();
+            monitoredPlanes.HandleSeperationEvents(CurrentTracks);
         }
 
         public void removeTrack(ITrack track)
