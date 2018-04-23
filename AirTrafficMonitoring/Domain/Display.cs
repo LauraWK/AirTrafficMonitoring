@@ -14,5 +14,10 @@ namespace AirTrafficMonitoring.Domain
             Console.WriteLine("Tag: " + _track.Tag + " XCoordinate: " + _track.XCoordinate + " YCoordinate: " + _track.YCoordinate + " Altitude: " + _track.Altitude + " Timestamp: " + _track.Timestamp);
 
         }
+
+        public void ShowSeperationEvent(ITrack track1, ITrack track2)
+        {
+            Console.WriteLine("Alarm!!!" + "\n" + "Planes in conflict " + track1.Tag + "and" + track2.Tag + "\n" + "Time of occurance: " + DateTime.Now);
+        }
     }
 }
