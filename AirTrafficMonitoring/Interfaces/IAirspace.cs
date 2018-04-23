@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirTrafficMonitoring.Interfaces
 {
-    interface IAirspace
+    public interface IAirspace
     {
         bool DefineAirspace(ITrack track);
     }
