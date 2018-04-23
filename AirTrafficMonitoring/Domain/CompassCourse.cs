@@ -19,7 +19,7 @@ namespace AirTrafficMonitoring
 
             double angleInRadians = Math.Atan(diffYCoordinate/diffXCoordinate);
 
-            double angleInDegrees = Math.Abs(angleInRadians / (180 / Math.PI));
+            double angleInDegrees = Math.Abs(angleInRadians * (180 / Math.PI));
 
             if (diffXCoordinate < 0 || diffYCoordinate < 0)
             {
