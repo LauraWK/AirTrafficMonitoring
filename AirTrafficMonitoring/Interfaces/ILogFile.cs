@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace AirTrafficMonitoring.Interfaces
 {
-    interface ILogFile
+    public interface ILogFile
     {
-        void LogToFile(TextWriter w, ITrack track1, ITrack track2);
+        void LogToFile(ITrack track1, ITrack track2);
     }
 }

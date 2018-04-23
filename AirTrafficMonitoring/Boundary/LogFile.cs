@@ -10,14 +10,12 @@ namespace AirTrafficMonitoring.Boundary
 {
    public class LogFile : ILogFile
    {
-     
-       public void LogToFile(TextWriter w, ITrack track1, ITrack track2)
-        {
-            w.Write("Planes in conflict: ");
-            w.WriteLine("{0}"+" and "+"{1}", track1.Tag, track2.Tag);
-            w.Write("Time of occurance: ");
-            w.WriteLine("{0}", DateTime.Now);
-
+       public void LogToFile(ITrack track1, ITrack track2)
+       {
+           string path = Directory.GetCurrentDirectory() + "Logfile.txt";
+           string text = "Planes in conflict: " + track1.Tag + " and " + track2.Tag + "\nTime of occurance: " +
+                         DateTime.Now;
+           File.WriteAllText(path,text);
         }
     }
 }

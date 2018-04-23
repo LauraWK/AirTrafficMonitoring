@@ -17,6 +17,7 @@ namespace AirTrafficMonitoring.Controller
         private IDisplay display;
         private MonitoredPlanes monitoredPlanes;
         private List<ITrack> tracksToRemove;
+        private SeperationEvent seperationEvent;
 
 
         public SortingPlanesController()
@@ -26,6 +27,7 @@ namespace AirTrafficMonitoring.Controller
             _compassCourse = new CompassCourse();
             display = new Display();
             monitoredPlanes = new MonitoredPlanes();
+            seperationEvent = new SeperationEvent(monitoredPlanes,display);
             tracksToRemove = new List<ITrack>();
         }
 

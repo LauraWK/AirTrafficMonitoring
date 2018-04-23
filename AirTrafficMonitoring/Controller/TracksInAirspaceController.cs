@@ -16,7 +16,7 @@ namespace AirTrafficMonitoring.Controller
         public TracksInAirspaceController()
         {
             airspace = new Airspace();
-            tracksInAirspace = new SortingPlanesController();
+            tracksInAirspace = new  SortingPlanesController();
         }
 
         public void AddToList(ITrack track)
