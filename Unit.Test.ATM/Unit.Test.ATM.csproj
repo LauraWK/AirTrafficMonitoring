@@ -59,6 +59,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SeperationEventTest.cs" />
+    <Compile Include="Tests\CompassCourseTest.cs" />
     <Compile Include="Tests\ControllerTest.cs" />
     <Compile Include="Tests\TrackFactoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -26,7 +26,7 @@ namespace AirTrafficMonitoring.Boundary
                         double yCoordinate2 = trackList[j].YCoordinate;
 
                         if (Math.Abs(xCoordinate1 - xCoordinate2) < 300 && Math.Abs(yCoordinate2 - yCoordinate1) < 300
-                            && Math.Abs(trackList[i].Altitude - trackList[j].Altitude) < 5000)
+                            && Math.Abs(trackList[i].Altitude - trackList[j].Altitude) < 5000 )
                         {
                             Notify(trackList[i],trackList[j]);
                         }
