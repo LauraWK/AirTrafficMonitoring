@@ -13,11 +13,11 @@ namespace AirTrafficMonitoring
     {
 
         private ITransponderReceiver _reciever;
-        private TracksInAirspaceController _controllerList;
-        public ReceivedDataController(ITransponderReceiver reciever, TracksInAirspaceController controllerList)
+        private TracksInAirspaceController _airspaceController;
+        public ReceivedDataController(ITransponderReceiver reciever, TracksInAirspaceController airspaceController)
         {
             _reciever = reciever;
-            _controllerList = controllerList;
+            _airspaceController = airspaceController;
 
         }
 
@@ -38,7 +38,7 @@ namespace AirTrafficMonitoring
             foreach (var item in myList)
             {
                 var track = TF.Create(item);
-                _controllerList.AddToList(track);
+                _airspaceController.AddToList(track);
             }
 
            

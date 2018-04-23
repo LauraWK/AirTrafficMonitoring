@@ -4,6 +4,7 @@ using NUnit.Framework;
 using NUnit.Framework.Internal;
 using System;
 using System.Collections.Generic;
+using AirTrafficMonitoring.Controller;
 using TransponderReceiver;
 
 namespace Unit.Test.ATM
@@ -14,6 +15,7 @@ namespace Unit.Test.ATM
         private ITransponderReceiver receiver;
         private ReceivedDataController uut;
         private TrackFactory fakeFactory;
+        private TracksInAirspaceController fakeAirspaceController;
       
 
         [SetUp]
@@ -21,7 +23,8 @@ namespace Unit.Test.ATM
         {
             receiver = Substitute.For<ITransponderReceiver>();
             fakeFactory = Substitute.For<TrackFactory>();
-            uut = new ReceivedDataController(receiver);
+            fakeAirspaceController = Substitute.For<TracksInAirspaceController>();
+            uut = new ReceivedDataController(receiver,fakeAirspaceController);
         }
 
         [Test]
