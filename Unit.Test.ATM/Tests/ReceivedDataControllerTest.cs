@@ -17,14 +17,14 @@ namespace Unit.Test.ATM.Tests
         private ITransponderReceiver receiver;
         private ReceivedDataController uut;
         private TrackFactory fakefactory;
-        private TracksInAirspaceController fakeAirspaceController;
+        private AirTrafficMonitoring.Controller.TracksInAirspaceController fakeAirspaceController;
 
         [SetUp]
         public void SetUp()
         {
             receiver = Substitute.For<ITransponderReceiver>();
             fakefactory = Substitute.For<TrackFactory>();
-            fakeAirspaceController = Substitute.For<TracksInAirspaceController>();
+            fakeAirspaceController = Substitute.For<AirTrafficMonitoring.Controller.TracksInAirspaceController>();
             uut = new ReceivedDataController(receiver, fakeAirspaceController);
 
         }
