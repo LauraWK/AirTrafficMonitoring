@@ -12,11 +12,13 @@ namespace AirTrafficMonitoring.Controller
     public class SortingPlanesController
     {
         private List<ITrack> CurrentTracks;
-        private Velocity _velocity;
-        private CompassCourse _compassCourse;
+        private IVelocity _velocity;
+        private ICompassCourse _compassCourse;
         private IDisplay display;
         private MonitoredPlanes monitoredPlanes;
         private List<ITrack> tracksToRemove;
+        private IMonitoredPlanes seperationEvent;
+        private ILogFile logFile;
 
 
         public SortingPlanesController()
@@ -26,6 +28,8 @@ namespace AirTrafficMonitoring.Controller
             _compassCourse = new CompassCourse();
             display = new Display();
             monitoredPlanes = new MonitoredPlanes();
+            logFile = new LogFile();
+            seperationEvent = new SeperationEvent(monitoredPlanes,display,logFile);
             tracksToRemove = new List<ITrack>();
         }
 

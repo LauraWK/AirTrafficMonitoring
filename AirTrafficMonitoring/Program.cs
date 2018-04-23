@@ -14,7 +14,7 @@ namespace AirTrafficMonitoring
     {
         static void Main(string[] args)
         {
-                    TracksInAirspaceController controllerlist = new TracksInAirspaceController();
+            TracksInAirspaceController controllerlist = new TracksInAirspaceController();
             var controller = new ReceivedDataController(TransponderReceiverFactory.CreateTransponderDataReceiver(), controllerlist);
                     
             controller.StartReceiving();
