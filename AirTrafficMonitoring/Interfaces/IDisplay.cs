@@ -9,5 +9,6 @@ namespace AirTrafficMonitoring.Interfaces
     public interface IDisplay
     {
         void ShowTrack(ITrack _track);
+        void ShowSeperationEvent(ITrack track1, ITrack track2);
     }
 }
