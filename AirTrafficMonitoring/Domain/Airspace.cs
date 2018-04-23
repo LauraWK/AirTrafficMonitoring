@@ -12,6 +12,11 @@ namespace AirTrafficMonitoring.Domain
      
         private Display _display;
 
+        public Airspace()
+        {
+            _display = new Display();
+        }
+
         public bool DefineAirspace(ITrack track)
         {
             if (track.XCoordinate >= 10000 || track.XCoordinate <= 90000 && track.YCoordinate >= 10000 ||
