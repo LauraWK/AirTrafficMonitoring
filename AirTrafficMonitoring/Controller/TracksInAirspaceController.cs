@@ -11,23 +11,23 @@ namespace AirTrafficMonitoring.Controller
     public class TracksInAirspaceController
     {
         private IAirspace airspace;
-        private SortingPlanesController tracksInAirspace;
+        private SortingPlanesController _sortingController;
 
         public TracksInAirspaceController()
         {
             airspace = new Airspace();
-            tracksInAirspace = new SortingPlanesController();
+            _sortingController = new SortingPlanesController();
         }
 
         public void AddToList(ITrack track)
         {
             if (airspace.DefineAirspace(track))
             {
-                tracksInAirspace.MatchTracks(track);
+                _sortingController.MatchTracks(track);
             }
             else
             {
-                tracksInAirspace.removeTrack(track);
+                _sortingController.removeTrack(track);
             }
         }
     }
