@@ -12,12 +12,12 @@ namespace AirTrafficMonitoring.Controller
     public class SortingPlanesController
     {
         private List<ITrack> CurrentTracks;
-        private Velocity _velocity;
-        private CompassCourse _compassCourse;
+        private IVelocity _velocity;
+        private ICompassCourse _compassCourse;
         private IDisplay display;
         private MonitoredPlanes monitoredPlanes;
         private List<ITrack> tracksToRemove;
-        private SeperationEvent seperationEvent;
+        private IMonitoredPlanes seperationEvent;
 
 
         public SortingPlanesController()
