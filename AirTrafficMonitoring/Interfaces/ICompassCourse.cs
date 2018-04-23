@@ -8,6 +8,6 @@ namespace AirTrafficMonitoring.Interfaces
 {
     interface ICompassCourse
     {
-        double Direction(ITrack track);
+        double Direction(ITrack track1, ITrack track2);
     }
 }

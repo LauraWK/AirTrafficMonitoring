@@ -36,7 +36,7 @@ namespace AirTrafficMonitoring.Controller
                     if (track.Tag == t.Tag)
                     {
                         track.Velocity = _velocity.DetermineVelocity(track, t);
-                        track.CompassCourse = _compassCourse.Direction(track);
+                        track.CompassCourse = _compassCourse.Direction(track,t);
                         tracksToRemove.Add(t);
                     }
                 }
