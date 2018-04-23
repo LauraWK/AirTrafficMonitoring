@@ -61,7 +61,6 @@
   <ItemGroup>
     <Compile Include="Tests\AirspaceTest.cs" />
     <Compile Include="Tests\CompassCourseTest.cs" />
-    <Compile Include="Tests\ReceivedDataController.cs" />
     <Compile Include="Tests\MonitoredPlanesTest.cs" />
     <Compile Include="Tests\ReceivedDataControllerTest.cs" />
     <Compile Include="Tests\SeperationEventsTest.cs" />
