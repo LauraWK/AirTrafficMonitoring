@@ -21,8 +21,6 @@ namespace AirTrafficMonitoring
             XCoordinate = 0;
             YCoordinate = 0;
             Altitude = 0;
-            Velocity = 0;
-            CompassCourse = 0;
 
 
         }

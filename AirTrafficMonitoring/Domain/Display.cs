@@ -11,7 +11,7 @@ namespace AirTrafficMonitoring.Domain
     {
         public void ShowTrack(ITrack _track)
         {
-            Console.WriteLine("Tag: " + _track.Tag + " XCoordinate: " + _track.XCoordinate + " YCoordinate: " + _track.YCoordinate + " Altitude: " + _track.Altitude + " Timestamp: " + _track.Timestamp);
+            Console.WriteLine("Tag: " + _track.Tag + " XCoordinate: " + _track.XCoordinate + " YCoordinate: " + _track.YCoordinate + " Altitude: " + _track.Altitude + " Timestamp: " + _track.Timestamp + " Velocity: " + _track.Velocity + " Course: " + _track.CompassCourse);
 
         }
     }

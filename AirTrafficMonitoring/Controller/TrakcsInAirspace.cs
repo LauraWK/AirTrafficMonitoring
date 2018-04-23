@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AirTrafficMonitoring.Boundary;
 using AirTrafficMonitoring.Domain;
+using AirTrafficMonitoring.Interfaces;
 
 namespace AirTrafficMonitoring.Controller
 {
@@ -12,7 +14,8 @@ namespace AirTrafficMonitoring.Controller
         private List<ITrack> CurrentTracks;
         private Velocity _velocity;
         private CompassCourse _compassCourse;
-       
+        private IDisplay display;
+        private MonitoredPlanes monitoredPlanes;
 
 
         public TrakcsInAirspace()
@@ -20,23 +23,33 @@ namespace AirTrafficMonitoring.Controller
             CurrentTracks = new List<ITrack>();
             _velocity = new Velocity();
             _compassCourse = new CompassCourse();
+            display = new Display();
+            monitoredPlanes = new MonitoredPlanes();
         }
 
-        public void MatchTracks(List<ITrack> newTracks)
+        public void MatchTracks(ITrack track)
         {
-            foreach (var n in newTracks)
-            {
-                foreach (var old in CurrentTracks)
+                foreach (var t in CurrentTracks)
                 {
-                    if (n.Tag == old.Tag)
+                    if (track.Tag == t.Tag)
                     {
-                        n.Velocity = _velocity.DetermineVelocity(n, old);
-                        n.CompassCourse = _compassCourse.Direction(n);
+                        track.Velocity = _velocity.DetermineVelocity(track, t);
+                        track.CompassCourse = _compassCourse.Direction(track);
                     }
                 }
-            }
+            CurrentTracks.Add(track);
+            display.ShowTrack(track);
+        }
 
-            CurrentTracks = newTracks;
+        public void removeTrack(ITrack track)
+        {
+            foreach (var old in CurrentTracks)
+            {
+                if (track.Tag == old.Tag)
+                {
+                    CurrentTracks.Remove(old);
+                }
+            }
         }
     }
 }

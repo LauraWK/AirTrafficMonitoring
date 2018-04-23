@@ -9,13 +9,7 @@ namespace AirTrafficMonitoring.Domain
 {
     public class Airspace : IAirspace
     {
-     
-        private Display _display;
-
-        public Airspace()
-        {
-            _display = new Display();
-        }
+    
 
         public bool DefineAirspace(ITrack track)
         {
@@ -23,17 +17,14 @@ namespace AirTrafficMonitoring.Domain
                 track.YCoordinate >= 90000)
             {
                 if (track.Altitude >= 500 && track.Altitude <= 20000)
-                {
-                   _display.ShowTrack(track);
-                    
+                {   
                     return true;
                 }
                 return false;
 
             }
             return false;
-
-
         }
+
     }
 }

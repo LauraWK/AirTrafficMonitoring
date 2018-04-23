@@ -4,18 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AirTrafficMonitoring.Domain;
+using AirTrafficMonitoring.Interfaces;
 
 namespace AirTrafficMonitoring.Controller
 {
     public class ControllerList
     {
-        private List<ITrack> TrackList;
-        private Airspace airspace;
+        private IAirspace airspace;
         private TrakcsInAirspace tracksInAirspace;
 
         public ControllerList()
         {
-            TrackList = new List<ITrack>();
             airspace = new Airspace();
             tracksInAirspace = new TrakcsInAirspace();
         }
@@ -24,8 +23,11 @@ namespace AirTrafficMonitoring.Controller
         {
             if (airspace.DefineAirspace(track))
             {
-                TrackList.Add(track);
-                tracksInAirspace.MatchTracks(TrackList);
+                tracksInAirspace.MatchTracks(track);
+            }
+            else
+            {
+                tracksInAirspace.removeTrack(track);
             }
         }
     }
