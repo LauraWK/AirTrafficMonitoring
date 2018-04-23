@@ -8,15 +8,15 @@ using AirTrafficMonitoring.Interfaces;
 
 namespace AirTrafficMonitoring.Controller
 {
-    public class ControllerList
+    public class TracksInAirspaceController
     {
         private IAirspace airspace;
-        private TrakcsInAirspace tracksInAirspace;
+        private SortingPlanesController tracksInAirspace;
 
-        public ControllerList()
+        public TracksInAirspaceController()
         {
             airspace = new Airspace();
-            tracksInAirspace = new TrakcsInAirspace();
+            tracksInAirspace = new SortingPlanesController();
         }
 
         public void AddToList(ITrack track)

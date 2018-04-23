@@ -12,7 +12,7 @@ namespace Unit.Test.ATM
     public class ControllerTest
     {
         private ITransponderReceiver receiver;
-        private ControllerReceivedData uut;
+        private ReceivedDataController uut;
         private TrackFactory fakeFactory;
       
 
@@ -21,7 +21,7 @@ namespace Unit.Test.ATM
         {
             receiver = Substitute.For<ITransponderReceiver>();
             fakeFactory = Substitute.For<TrackFactory>();
-            uut = new ControllerReceivedData(receiver);
+            uut = new ReceivedDataController(receiver);
         }
 
         [Test]

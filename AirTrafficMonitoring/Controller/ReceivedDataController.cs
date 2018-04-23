@@ -9,12 +9,12 @@ using TransponderReceiver;
 
 namespace AirTrafficMonitoring
 {
-    public class ControllerReceivedData
+    public class ReceivedDataController
     {
 
         private ITransponderReceiver _reciever;
-        private ControllerList _controllerList;
-        public ControllerReceivedData(ITransponderReceiver reciever, ControllerList controllerList)
+        private TracksInAirspaceController _controllerList;
+        public ReceivedDataController(ITransponderReceiver reciever, TracksInAirspaceController controllerList)
         {
             _reciever = reciever;
             _controllerList = controllerList;

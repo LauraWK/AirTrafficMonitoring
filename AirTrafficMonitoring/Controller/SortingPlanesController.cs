@@ -9,7 +9,7 @@ using AirTrafficMonitoring.Interfaces;
 
 namespace AirTrafficMonitoring.Controller
 {
-    public class TrakcsInAirspace
+    public class SortingPlanesController
     {
         private List<ITrack> CurrentTracks;
         private Velocity _velocity;
@@ -19,7 +19,7 @@ namespace AirTrafficMonitoring.Controller
         private List<ITrack> tracksToRemove;
 
 
-        public TrakcsInAirspace()
+        public SortingPlanesController()
         {
             CurrentTracks = new List<ITrack>();
             _velocity = new Velocity();

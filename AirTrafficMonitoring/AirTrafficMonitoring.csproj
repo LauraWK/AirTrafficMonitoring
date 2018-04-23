@@ -65,10 +65,10 @@
     <Compile Include="Boundary\MonitoredPlanes.cs" />
     <Compile Include="Boundary\SeperationEvent.cs" />
     <Compile Include="Boundary\SubjectMonitoredPlanes.cs" />
-    <Compile Include="Controller\ControllerList.cs" />
-    <Compile Include="Controller\TrakcsInAirspace.cs" />
+    <Compile Include="Controller\TracksInAirspaceController.cs" />
+    <Compile Include="Controller\SortingPlanesController.cs" />
     <Compile Include="Domain\CompassCourse.cs" />
-    <Compile Include="Controller\ControllerReceivedData.cs" />
+    <Compile Include="Controller\ReceivedDataController.cs" />
     <Compile Include="Domain\Airspace.cs" />
     <Compile Include="Domain\Display.cs" />
     <Compile Include="Domain\Velocity.cs" />
