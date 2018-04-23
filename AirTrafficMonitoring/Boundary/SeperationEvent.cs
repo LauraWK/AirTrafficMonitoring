@@ -13,14 +13,15 @@ namespace AirTrafficMonitoring.Boundary
         private MonitoredPlanes _monitor;
         private ILogFile _logFile;
         private IDisplay _display;
+        private ILogFile _logfile;
         
 
-        public SeperationEvent(MonitoredPlanes monitor,IDisplay display)
+        public SeperationEvent(MonitoredPlanes monitor,IDisplay display, ILogFile logfile)
         {
             _monitor = monitor;
             _display = display;
             monitor.Attach(this);
-            _logFile = new LogFile();
+            _logFile = logfile;
         }
 
         public void Update(ITrack track1, ITrack track2)
