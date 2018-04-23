@@ -13,6 +13,7 @@ namespace AirTrafficMonitoring.Boundary
         private MonitoredPlanes _monitor;
         private LogFile _logFile;
         private TextWriter writer;
+        private IDisplay _display;
         
 
         public SeperationEvent(MonitoredPlanes monitor)
@@ -24,6 +25,7 @@ namespace AirTrafficMonitoring.Boundary
         public void Update(ITrack track1, ITrack track2)
         {
             _logFile.LogToFile(writer, track1, track2);
+            _display.ShowSeperationEvent(track1,track2);
         }
 
 
