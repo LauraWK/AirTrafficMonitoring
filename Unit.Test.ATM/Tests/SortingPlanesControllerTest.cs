@@ -81,7 +81,7 @@ namespace Unit.Test.ATM
         public void MatchTracks_MonitoredPlanesIsCalled_CurrentTracksList()
         {
             uut.MatchTracks(newtrack);
-            monitoredPlanes.HandleSeperationEvents(CurrentTracks);
+            monitoredPlanes.Received().HandleSeperationEvents(CurrentTracks);
         }
 
 
