@@ -60,7 +60,7 @@ namespace Unit.Test.ATM
         public void MatchTracks_CompassCourseCalc_NewTrack()
         {
             uut.MatchTracks(newtrack);
-            Assert.That(CompassCourse.Direction(newtrack));
+            _calc.Received().Direction(newtrack,oldtrack);
 
         }
         [Test]
