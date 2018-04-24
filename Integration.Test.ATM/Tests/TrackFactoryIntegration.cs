@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Integration.Test.ATM
 {
-    public class Class1
+    class TrackFactoryIntegration
     {
     }
 }
