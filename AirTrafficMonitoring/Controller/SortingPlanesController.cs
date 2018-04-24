@@ -16,6 +16,7 @@ namespace AirTrafficMonitoring.Controller
         private MonitoredPlanes monitoredPlanes;
         private List<ITrack> tracksToRemove;
         private IMonitoredPlanes seperationEvent;
+      
 
 
         public SortingPlanesController(List<ITrack> currentlist, IDisplay display, MonitoredPlanes monitor, IMonitoredPlanes sepevent, List<ITrack> tracktoremove)
