@@ -76,9 +76,7 @@
     <Compile Include="Interfaces\IDisplay.cs" />
     <Compile Include="Interfaces\ILogFile.cs" />
     <Compile Include="Interfaces\IMonitoredPlanes.cs" />
-    <Compile Include="Interfaces\ICompassCourse.cs" />
     <Compile Include="Interfaces\ITrack.cs" />
-    <Compile Include="Interfaces\IVelocity.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Domain\Track.cs" />

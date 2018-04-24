@@ -7,11 +7,11 @@ using AirTrafficMonitoring.Interfaces;
 
 namespace AirTrafficMonitoring.Domain
 {
-    public class Velocity : IVelocity
+    public class Velocity
     {
         
 
-        public double DetermineVelocity(ITrack track1, ITrack track2)
+        public static double DetermineVelocity(ITrack track1, ITrack track2)
         {
             TimeSpan timediff = track2.Timestamp.Subtract(track1.Timestamp);
             double secdiff = timediff.TotalSeconds;

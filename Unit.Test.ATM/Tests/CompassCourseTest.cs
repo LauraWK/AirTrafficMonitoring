@@ -14,13 +14,8 @@ namespace Unit.Test.ATM.Tests
     {
         private ITrack fakeTrack1;
         private ITrack fakeTrack2;
-        private CompassCourse uut;
-
-        [SetUp]
-        public void Setup()
-        {
-            uut = new CompassCourse();
-        }
+       
+        //Da metoden er statisk har vi ikke nogen uut, men vi tester stadig metoden
 
         [TestCase(10000, 10000, 10000, 90000, 0)]
         [TestCase(10000, 90000, 90000, 90000, 90)]
@@ -31,7 +26,7 @@ namespace Unit.Test.ATM.Tests
         {
             fakeTrack1 = new Track() { Tag = "ABC123", XCoordinate = x1, YCoordinate = y1};
             fakeTrack2 = new Track() { Tag = "ABC123", XCoordinate = x2, YCoordinate = y2};
-            Assert.That(Math.Round(uut.Direction(fakeTrack1, fakeTrack2)),Is.EqualTo(result));
+            Assert.That(Math.Round(CompassCourse.Direction(fakeTrack1, fakeTrack2)),Is.EqualTo(result));
 
         }
 

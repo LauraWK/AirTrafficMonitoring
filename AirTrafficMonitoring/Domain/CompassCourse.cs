@@ -7,9 +7,9 @@ using AirTrafficMonitoring.Interfaces;
 
 namespace AirTrafficMonitoring
 {
-    public class CompassCourse : ICompassCourse
+    public class CompassCourse
     {
-        public double Direction(ITrack track1, ITrack track2)
+        public static double Direction(ITrack track1, ITrack track2)
         {
 
             double diffXCoordinate = track2.XCoordinate - track1.XCoordinate;

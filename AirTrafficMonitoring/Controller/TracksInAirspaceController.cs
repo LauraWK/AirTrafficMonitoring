@@ -10,19 +10,19 @@ namespace AirTrafficMonitoring.Controller
 {
     public class TracksInAirspaceController
     {
-        private IAirspace airspace;
+        private IAirspace _airspace;
         private SortingPlanesController _sortingController;
 
-        public TracksInAirspaceController()
+        public TracksInAirspaceController(IAirspace airspace, SortingPlanesController sortingcontroller)
         {
-            airspace = new Airspace();
-            _sortingController = new SortingPlanesController();
+            _airspace = airspace;
+            _sortingController = sortingcontroller;
 
         }
 
         public void AddToList(ITrack track)
         {
-            if (airspace.DefineAirspace(track))
+            if (_airspace.DefineAirspace(track))
             {
                 _sortingController.MatchTracks(track);
             }

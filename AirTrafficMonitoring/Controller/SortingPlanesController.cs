@@ -12,25 +12,19 @@ namespace AirTrafficMonitoring.Controller
     public class SortingPlanesController
     {
         private List<ITrack> CurrentTracks;
-        private IVelocity _velocity;
-        private ICompassCourse _compassCourse;
-        private IDisplay display;
+        private IDisplay _display;
         private MonitoredPlanes monitoredPlanes;
         private List<ITrack> tracksToRemove;
         private IMonitoredPlanes seperationEvent;
-        private ILogFile logFile;
 
 
-        public SortingPlanesController()
+        public SortingPlanesController(List<ITrack> currentlist, IDisplay display, MonitoredPlanes monitor, IMonitoredPlanes sepevent, List<ITrack> tracktoremove)
         {
-            CurrentTracks = new List<ITrack>();
-            _velocity = new Velocity();
-            _compassCourse = new CompassCourse();
-            display = new Display();
-            monitoredPlanes = new MonitoredPlanes();
-            logFile = new LogFile();
-            seperationEvent = new SeperationEvent(monitoredPlanes,display,logFile);
-            tracksToRemove = new List<ITrack>();
+            CurrentTracks = currentlist;
+            _display = display;
+            monitoredPlanes = monitor;
+            seperationEvent = sepevent;
+            tracksToRemove = tracktoremove;
         }
 
         public void MatchTracks(ITrack track)
@@ -39,13 +33,13 @@ namespace AirTrafficMonitoring.Controller
                 {
                     if (track.Tag == t.Tag)
                     {
-                        track.Velocity = _velocity.DetermineVelocity(track, t);
-                        track.CompassCourse = _compassCourse.Direction(track,t);
+                        track.Velocity = Velocity.DetermineVelocity(track, t);
+                        track.CompassCourse = CompassCourse.Direction(track,t);
                         tracksToRemove.Add(t);
                     }
                 }
             CurrentTracks.Add(track);
-            display.ShowTrack(track);
+            _display.ShowTrack(track);
             foreach (var R in tracksToRemove)
             {
                 if (CurrentTracks.Contains(R))
