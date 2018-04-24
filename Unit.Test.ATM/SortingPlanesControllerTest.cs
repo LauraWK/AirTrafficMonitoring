@@ -30,8 +30,8 @@ namespace Unit.Test.ATM
         [SetUp]
         public void SetUp()
         {
-            newtrack = new Track() { Tag = "ABC123" };
-            oldtrack = new Track() { Tag = "ABC123" };
+            newtrack = new Track() { Tag = "ABC123"};
+            oldtrack = new Track() { Tag = "ABC123"};
             CurrentTracks = new List<ITrack>(){oldtrack};
             _display = Substitute.For<IDisplay>();
             monitoredPlanes = Substitute.For<MonitoredPlanes>();
