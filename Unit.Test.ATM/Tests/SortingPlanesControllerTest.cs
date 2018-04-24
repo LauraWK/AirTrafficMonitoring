@@ -19,14 +19,13 @@ namespace Unit.Test.ATM
     {
         private List<ITrack> CurrentTracks;
         private IDisplay _display;
-        private MonitoredPlanes monitoredPlanes;
+        private IMonitoredPlanes monitoredPlanes;
         private List<ITrack> tracksToRemove;
         private List<ITrack> otherTracksToRemove;
-        private IMonitoredPlanes seperationEvent;
         private ICalculator _calc;
         private ITrack newtrack;
         private ITrack oldtrack;
-        private SortingPlanesController uut;
+        private ISortingPlanesController uut;
 
         [SetUp]
         public void SetUp()
@@ -35,10 +34,9 @@ namespace Unit.Test.ATM
             oldtrack = new Track() { Tag = "ABC123"};
             CurrentTracks = new List<ITrack>(){oldtrack};
             _display = Substitute.For<IDisplay>();
-            monitoredPlanes = Substitute.For<MonitoredPlanes>();
+            monitoredPlanes = Substitute.For<IMonitoredPlanes>();
             tracksToRemove = new List<ITrack>(){oldtrack};
             otherTracksToRemove = new List<ITrack>(){oldtrack};
-            seperationEvent = Substitute.For<IMonitoredPlanes>();
             _calc = Substitute.For<ICalculator>();
             uut = new SortingPlanesController(CurrentTracks,_display,monitoredPlanes,tracksToRemove, _calc,otherTracksToRemove);
         }
