@@ -19,13 +19,13 @@ namespace Unit.Test.ATM.Tests
         private List<ITrack> faketracklist;
         private ITrack faketrack1;
         private ITrack faketrack2;
-        private IMonitoredPlanes fakeSeperationEvent;
+        private ISeperationEvent fakeSeperationEvent;
 
         [SetUp]
         public void SetUp()
         {
             uut = new MonitoredPlanes();
-            fakeSeperationEvent = Substitute.For<IMonitoredPlanes>();
+            fakeSeperationEvent = Substitute.For<ISeperationEvent>();
             faketracklist = new List<ITrack>();
             uut.Attach(fakeSeperationEvent);
         }

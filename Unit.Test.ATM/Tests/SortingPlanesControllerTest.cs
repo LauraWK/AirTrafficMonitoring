@@ -40,7 +40,7 @@ namespace Unit.Test.ATM
             otherTracksToRemove = new List<ITrack>(){oldtrack};
             seperationEvent = Substitute.For<IMonitoredPlanes>();
             _calc = Substitute.For<ICalculator>();
-            uut = new SortingPlanesController(CurrentTracks,_display,monitoredPlanes,seperationEvent,tracksToRemove, _calc,otherTracksToRemove);
+            uut = new SortingPlanesController(CurrentTracks,_display,monitoredPlanes,tracksToRemove, _calc,otherTracksToRemove);
         }
 
         [Test]

@@ -8,12 +8,12 @@ using AirTrafficMonitoring.Interfaces;
 
 namespace AirTrafficMonitoring.Controller
 {
-    public class TracksInAirspaceController
+    public class TracksInAirspaceController : ITracksInAirSpaceController
     {
         private IAirspace _airspace;
-        private SortingPlanesController _sortingController;
+        private ISortingPlanesController _sortingController;
 
-        public TracksInAirspaceController(IAirspace airspace, SortingPlanesController sortingcontroller)
+        public TracksInAirspaceController(IAirspace airspace, ISortingPlanesController sortingcontroller)
         {
             _airspace = airspace;
             _sortingController = sortingcontroller;
