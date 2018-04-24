@@ -26,7 +26,8 @@ namespace AirTrafficMonitoring
             IMonitoredPlanes sepevent = new SeperationEvent(monitor,display, logfile);
             List<ITrack> currentlist = new List<ITrack>();
             List<ITrack> removelist = new List<ITrack>();
-            SortingPlanesController sortingcontroller = new SortingPlanesController(currentlist, display, monitor, sepevent, removelist, new Calculator());
+            List<ITrack> otherRemoveList = new List<ITrack>();
+            SortingPlanesController sortingcontroller = new SortingPlanesController(currentlist, display, monitor, sepevent, removelist, new Calculator(), otherRemoveList);
 
             //Det her er for at constructor-injecte TracksInAirspaceController
             IAirspace airspace = new Airspace();

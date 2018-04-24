@@ -17,10 +17,11 @@ namespace AirTrafficMonitoring.Controller
         private List<ITrack> tracksToRemove;
         private ICalculator _calc;
         private IMonitoredPlanes seperationEvent;
+        private List<ITrack> _otherTracksToRemove;
       
 
 
-        public SortingPlanesController(List<ITrack> currentlist, IDisplay display, MonitoredPlanes monitor, IMonitoredPlanes sepevent, List<ITrack> tracktoremove, ICalculator calc)
+        public SortingPlanesController(List<ITrack> currentlist, IDisplay display, MonitoredPlanes monitor, IMonitoredPlanes sepevent, List<ITrack> tracktoremove, ICalculator calc, List<ITrack> otherTracksToRemove)
         {
             CurrentTracks = currentlist;
             _display = display;
@@ -28,6 +29,7 @@ namespace AirTrafficMonitoring.Controller
             seperationEvent = sepevent;
             tracksToRemove = tracktoremove;
             _calc = calc;
+            _otherTracksToRemove = otherTracksToRemove;
         }
 
         public void MatchTracks(ITrack track)
@@ -53,13 +55,19 @@ namespace AirTrafficMonitoring.Controller
         }
 
         public void removeTrack(ITrack track)
-        {
+        {   
             foreach (var old in CurrentTracks)
             {
                 if (track.Tag == old.Tag)
                 {
-                    CurrentTracks.Remove(old);
+                    _otherTracksToRemove.Add(old);
                 }
+            }
+
+            foreach (var Ot in _otherTracksToRemove)
+            {
+                if (CurrentTracks.Contains(Ot))
+                    CurrentTracks.Remove(Ot);
             }
         }
     }

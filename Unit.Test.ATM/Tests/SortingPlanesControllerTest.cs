@@ -21,6 +21,7 @@ namespace Unit.Test.ATM
         private IDisplay _display;
         private MonitoredPlanes monitoredPlanes;
         private List<ITrack> tracksToRemove;
+        private List<ITrack> otherTracksToRemove;
         private IMonitoredPlanes seperationEvent;
         private ICalculator _calc;
         private ITrack newtrack;
@@ -36,9 +37,10 @@ namespace Unit.Test.ATM
             _display = Substitute.For<IDisplay>();
             monitoredPlanes = Substitute.For<MonitoredPlanes>();
             tracksToRemove = new List<ITrack>(){oldtrack};
+            otherTracksToRemove = new List<ITrack>(){oldtrack};
             seperationEvent = Substitute.For<IMonitoredPlanes>();
             _calc = Substitute.For<ICalculator>();
-            uut = new SortingPlanesController(CurrentTracks,_display,monitoredPlanes,seperationEvent,tracksToRemove, _calc);
+            uut = new SortingPlanesController(CurrentTracks,_display,monitoredPlanes,seperationEvent,tracksToRemove, _calc,otherTracksToRemove);
         }
 
         [Test]

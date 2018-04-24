@@ -68,12 +68,10 @@
     <Compile Include="Controller\TracksInAirspaceController.cs" />
     <Compile Include="Controller\SortingPlanesController.cs" />
     <Compile Include="Domain\Calculator.cs" />
-    <Compile Include="Domain\CompassCourse.cs" />
     <Compile Include="Controller\ReceivedDataController.cs" />
     <Compile Include="Domain\Airspace.cs" />
     <Compile Include="Domain\Display.cs" />
-    <Compile Include="Domain\ICalculator.cs" />
-    <Compile Include="Domain\Velocity.cs" />
+    <Compile Include="Interfaces\ICalculator.cs" />
     <Compile Include="Interfaces\IAirspace.cs" />
     <Compile Include="Interfaces\IDisplay.cs" />
     <Compile Include="Interfaces\ILogFile.cs" />
