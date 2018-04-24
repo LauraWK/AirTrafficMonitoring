@@ -9,7 +9,7 @@ using AirTrafficMonitoring.Interfaces;
 
 namespace AirTrafficMonitoring.Boundary
 {
-    public class MonitoredPlanes : SubjectMonitoredPlanes
+    public class MonitoredPlanes : SubjectMonitoredPlanes, IMonitoredPlanes
     {
         
         public void HandleSeperationEvents(List<ITrack> trackList) 

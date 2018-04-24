@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace AirTrafficMonitoring.Interfaces
 {
-    public interface IMonitoredPlanes
-    {
-        void HandleSeperationEvents(List<ITrack> tracklist);
-    }
+   public interface ISeperationEvent
+   {
+       void Update(ITrack track1, ITrack track2);
+   }
 }

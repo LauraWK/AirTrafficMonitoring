@@ -10,14 +10,14 @@ namespace AirTrafficMonitoring.Boundary
 {
     public abstract class SubjectMonitoredPlanes
     {
-        private List<IMonitoredPlanes> observerList = new List<IMonitoredPlanes>();
+        private List<ISeperationEvent> observerList = new List<ISeperationEvent>();
 
-        public void Attach(IMonitoredPlanes observer)
+        public void Attach(ISeperationEvent observer)
         {
             observerList.Add(observer);
         }
 
-        public void Detach(IMonitoredPlanes observer)
+        public void Detach(ISeperationEvent observer)
         {
             observerList.Remove(observer);
         }

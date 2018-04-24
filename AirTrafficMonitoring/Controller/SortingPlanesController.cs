@@ -13,20 +13,18 @@ namespace AirTrafficMonitoring.Controller
     {
         private List<ITrack> CurrentTracks;
         private IDisplay _display;
-        private MonitoredPlanes monitoredPlanes;
+        private IMonitoredPlanes monitoredPlanes;
         private List<ITrack> tracksToRemove;
         private ICalculator _calc;
-        private IMonitoredPlanes seperationEvent;
         private List<ITrack> _otherTracksToRemove;
       
 
 
-        public SortingPlanesController(List<ITrack> currentlist, IDisplay display, MonitoredPlanes monitor, IMonitoredPlanes sepevent, List<ITrack> tracktoremove, ICalculator calc, List<ITrack> otherTracksToRemove)
+        public SortingPlanesController(List<ITrack> currentlist, IDisplay display, IMonitoredPlanes monitor,  List<ITrack> tracktoremove, ICalculator calc, List<ITrack> otherTracksToRemove)
         {
             CurrentTracks = currentlist;
             _display = display;
             monitoredPlanes = monitor;
-            seperationEvent = sepevent;
             tracksToRemove = tracktoremove;
             _calc = calc;
             _otherTracksToRemove = otherTracksToRemove;
@@ -69,6 +67,7 @@ namespace AirTrafficMonitoring.Controller
                 if (CurrentTracks.Contains(Ot))
                     CurrentTracks.Remove(Ot);
             }
+            _otherTracksToRemove.Clear();
         }
     }
 }

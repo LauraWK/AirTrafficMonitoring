@@ -8,9 +8,9 @@ using AirTrafficMonitoring.Interfaces;
 
 namespace AirTrafficMonitoring.Boundary
 {
-    public class SeperationEvent : IMonitoredPlanes
+    public class SeperationEvent : ISeperationEvent
     {
-        private MonitoredPlanes _monitor;
+        private MonitoredPlanes _monior;
         private ILogFile _logFile;
         private IDisplay _display;
         private ILogFile _logfile;
@@ -18,9 +18,9 @@ namespace AirTrafficMonitoring.Boundary
 
         public SeperationEvent(MonitoredPlanes monitor,IDisplay display, ILogFile logfile)
         {
-            _monitor = monitor;
+            _monior = monitor;
             _display = display;
-            monitor.Attach(this);
+            _monior.Attach(this);
             _logFile = logfile;
         }
 

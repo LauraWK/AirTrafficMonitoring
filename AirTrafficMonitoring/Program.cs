@@ -22,12 +22,11 @@ namespace AirTrafficMonitoring
             //Det her er for at constructor-injecte SortingPlanesController
             IDisplay display = new Display();
             ILogFile logfile = new LogFile();
-            MonitoredPlanes monitor = new MonitoredPlanes();
-            IMonitoredPlanes sepevent = new SeperationEvent(monitor,display, logfile);
+            IMonitoredPlanes monitor = new MonitoredPlanes();
             List<ITrack> currentlist = new List<ITrack>();
             List<ITrack> removelist = new List<ITrack>();
             List<ITrack> otherRemoveList = new List<ITrack>();
-            SortingPlanesController sortingcontroller = new SortingPlanesController(currentlist, display, monitor, sepevent, removelist, new Calculator(), otherRemoveList);
+            SortingPlanesController sortingcontroller = new SortingPlanesController(currentlist, display, monitor, removelist, new Calculator(), otherRemoveList);
 
             //Det her er for at constructor-injecte TracksInAirspaceController
             IAirspace airspace = new Airspace();
