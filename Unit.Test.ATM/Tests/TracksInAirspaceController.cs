@@ -25,7 +25,7 @@ namespace Unit.Test.ATM.Tests
         {
             _airspace = Substitute.For<IAirspace>();
             _controller = Substitute.For<SortingPlanesController>();
-            _uut = new AirTrafficMonitoring.Controller.TracksInAirspaceController();
+            _uut = new AirTrafficMonitoring.Controller.TracksInAirspaceController(_airspace,_controller);
             faketrack1 = new Track()
             {
                 Tag = "ABC123",

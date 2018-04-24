@@ -22,6 +22,7 @@ namespace Unit.Test.ATM
         private MonitoredPlanes monitoredPlanes;
         private List<ITrack> tracksToRemove;
         private IMonitoredPlanes seperationEvent;
+        private ICalculator _calc;
         private ITrack newtrack;
         private ITrack oldtrack;
         private SortingPlanesController uut;
@@ -29,14 +30,15 @@ namespace Unit.Test.ATM
         [SetUp]
         public void SetUp()
         {
+            newtrack = new Track() { Tag = "ABC123"};
+            oldtrack = new Track() { Tag = "ABC123"};
             CurrentTracks = new List<ITrack>(){oldtrack};
             _display = Substitute.For<IDisplay>();
             monitoredPlanes = Substitute.For<MonitoredPlanes>();
             tracksToRemove = new List<ITrack>(){oldtrack};
             seperationEvent = Substitute.For<IMonitoredPlanes>();
-            newtrack = new Track() {Tag = "ABC123"};
-            oldtrack = new Track() {Tag = "ABC123"};
-            uut = new SortingPlanesController(CurrentTracks,_display,monitoredPlanes,seperationEvent,tracksToRemove);
+            _calc = Substitute.For<ICalculator>();
+            uut = new SortingPlanesController(CurrentTracks,_display,monitoredPlanes,seperationEvent,tracksToRemove, _calc);
         }
 
         [Test]
@@ -45,6 +47,51 @@ namespace Unit.Test.ATM
             uut.MatchTracks(newtrack);
             Assert.That(!CurrentTracks.Contains(oldtrack));
         }
+
+        [Test]
+        public void MatchTracks_VelocityCalc_NewTrack()
+        {
+            uut.MatchTracks(newtrack);
+            _calc.Received().DetermineVelocity(newtrack,oldtrack);
+            
+        }
+
+        [Test]
+        public void MatchTracks_CompassCourseCalc_NewTrack()
+        {
+            uut.MatchTracks(newtrack);
+            _calc.Received().Direction(newtrack,oldtrack);
+
+        }
+        [Test]
+        public void MatchTracks_AddOldTrackToRemoveList_RemoveListIsCleared()
+        {
+            uut.MatchTracks(newtrack);
+            Assert.IsEmpty(tracksToRemove);
+        }
+
+        [Test]
+        public void MatchTracks_NewTrackIsShownInDisplay()
+        {
+            uut.MatchTracks(newtrack);
+            _display.Received().ShowTrack(newtrack);
+        }
+
+        [Test]
+        public void MatchTracks_MonitoredPlanesIsCalled_CurrentTracksList()
+        {
+            uut.MatchTracks(newtrack);
+            monitoredPlanes.HandleSeperationEvents(CurrentTracks);
+        }
+
+
+        [Test]
+        public void removeTrack_CurrentTracks_RemoveOldTrack()
+        {
+            uut.removeTrack(newtrack);
+            Assert.That(!CurrentTracks.Contains(oldtrack));
+        }
+
 
 
 
