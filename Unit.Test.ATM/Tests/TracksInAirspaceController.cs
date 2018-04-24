@@ -40,6 +40,8 @@ namespace Unit.Test.ATM.Tests
                 YCoordinate = 100000,
                 Altitude = 30000,
             };
+            _airspace.DefineAirspace(faketrack1).Returns(true);
+            _airspace.DefineAirspace(faketrack2).Returns(false);
         }
 
         [Test]
