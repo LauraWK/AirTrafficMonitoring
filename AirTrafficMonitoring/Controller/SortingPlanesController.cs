@@ -9,7 +9,7 @@ using AirTrafficMonitoring.Interfaces;
 
 namespace AirTrafficMonitoring.Controller
 {
-    public class SortingPlanesController
+    public class SortingPlanesController: ISortingPlanesController
     {
         private List<ITrack> CurrentTracks;
         private IDisplay _display;

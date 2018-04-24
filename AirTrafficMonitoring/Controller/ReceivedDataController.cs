@@ -5,16 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using AirTrafficMonitoring.Controller;
 using AirTrafficMonitoring.Domain;
+using AirTrafficMonitoring.Interfaces;
 using TransponderReceiver;
 
 namespace AirTrafficMonitoring
 {
-    public class ReceivedDataController
+    public class ReceivedDataController : IReceivedDataController
     {
 
         private ITransponderReceiver _reciever;
-        private TracksInAirspaceController _airspaceController;
-        public ReceivedDataController(ITransponderReceiver reciever, TracksInAirspaceController airspaceController)
+        private ITracksInAirSpaceController _airspaceController;
+        public ReceivedDataController(ITransponderReceiver reciever, ITracksInAirSpaceController airspaceController)
         {
             _reciever = reciever;
             _airspaceController = airspaceController;

@@ -26,13 +26,13 @@ namespace AirTrafficMonitoring
             List<ITrack> currentlist = new List<ITrack>();
             List<ITrack> removelist = new List<ITrack>();
             List<ITrack> otherRemoveList = new List<ITrack>();
-            SortingPlanesController sortingcontroller = new SortingPlanesController(currentlist, display, monitor, removelist, new Calculator(), otherRemoveList);
+            ISortingPlanesController sortingcontroller = new SortingPlanesController(currentlist, display, monitor, removelist, new Calculator(), otherRemoveList);
 
             //Det her er for at constructor-injecte TracksInAirspaceController
             IAirspace airspace = new Airspace();
-            TracksInAirspaceController controllerlist = new TracksInAirspaceController(airspace,sortingcontroller);
+            ITracksInAirSpaceController controllerlist = new TracksInAirspaceController(airspace,sortingcontroller);
 
-            var controller = new ReceivedDataController(TransponderReceiverFactory.CreateTransponderDataReceiver(), controllerlist);
+            IReceivedDataController controller = new ReceivedDataController(TransponderReceiverFactory.CreateTransponderDataReceiver(), controllerlist);
 
             controller.StartReceiving();
            
