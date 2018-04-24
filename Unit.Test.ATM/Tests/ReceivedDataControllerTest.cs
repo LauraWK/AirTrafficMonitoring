@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AirTrafficMonitoring;
 using AirTrafficMonitoring.Controller;
+using AirTrafficMonitoring.Interfaces;
 using TransponderReceiver;
 using NUnit.Framework;
 using NSubstitute;
@@ -17,14 +18,14 @@ namespace Unit.Test.ATM.Tests
         private ITransponderReceiver receiver;
         private ReceivedDataController uut;
         private TrackFactory fakefactory;
-        private AirTrafficMonitoring.Controller.TracksInAirspaceController fakeAirspaceController;
+        private ITracksInAirSpaceController fakeAirspaceController;
 
         [SetUp]
         public void SetUp()
         {
             receiver = Substitute.For<ITransponderReceiver>();
             fakefactory = Substitute.For<TrackFactory>();
-            fakeAirspaceController = Substitute.For<AirTrafficMonitoring.Controller.TracksInAirspaceController>();
+            fakeAirspaceController = Substitute.For<ITracksInAirSpaceController>();
             uut = new ReceivedDataController(receiver, fakeAirspaceController);
 
         }
