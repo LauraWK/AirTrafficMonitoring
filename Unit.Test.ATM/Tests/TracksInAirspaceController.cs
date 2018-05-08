@@ -15,7 +15,7 @@ namespace Unit.Test.ATM.Tests
     public class TracksInAirspaceController
     {
         private IAirspace _airspace;
-        private SortingPlanesController _controller;
+        private ISortingPlanesController _controller;
         private AirTrafficMonitoring.Controller.TracksInAirspaceController _uut;
         private ITrack faketrack1;
         private ITrack faketrack2;
@@ -24,7 +24,7 @@ namespace Unit.Test.ATM.Tests
         public void SetUp()
         {
             _airspace = Substitute.For<IAirspace>();
-            _controller = Substitute.For<SortingPlanesController>();
+            _controller = Substitute.For<ISortingPlanesController>();
             _uut = new AirTrafficMonitoring.Controller.TracksInAirspaceController(_airspace,_controller);
             faketrack1 = new Track()
             {
@@ -40,6 +40,8 @@ namespace Unit.Test.ATM.Tests
                 YCoordinate = 100000,
                 Altitude = 30000,
             };
+            _airspace.DefineAirspace(faketrack1).Returns(true);
+            _airspace.DefineAirspace(faketrack2).Returns(false);
         }
 
         [Test]
