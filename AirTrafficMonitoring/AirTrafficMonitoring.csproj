@@ -84,7 +84,6 @@
     <Compile Include="Interfaces\ISortingPlanesController.cs" />
     <Compile Include="Interfaces\ITrack.cs" />
     <Compile Include="Interfaces\ITracksInAirSpaceController.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Domain\Track.cs" />
     <Compile Include="Boundary\TrackFactory.cs" />
