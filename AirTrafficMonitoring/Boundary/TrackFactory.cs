@@ -21,6 +21,7 @@ namespace AirTrafficMonitoring
                 Altitude = Convert.ToInt32(separatedValues[3]),
                 Timestamp = DateTime.ParseExact(separatedValues[4], "yyyyMMddHHmmssfff",
                     System.Globalization.CultureInfo.InvariantCulture)
+                    //hej
             };
             return contverter;
 
